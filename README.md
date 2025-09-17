@@ -28,6 +28,18 @@ L'obiettivo è offrire un flusso ripetibile: preparazione, esecuzione, log, sche
   ```
 - **Schedulazione**: pianificare l'esecuzione giornaliera/notturna con `Register-ScheduledTask`.
 
+ Ad esempio se abbiamo clonato il repos nel percorso C:\Scripts\backup-robocopy-toolkit
+
+ ```powershell
+  .\Register-BackupWatchdog.ps1 `
+  -ConfigPath "C:\Scripts\backup-robocopy-toolkit\backup.config.json" `
+  -WatchdogPath "C:\Scripts\backup-robocopy-toolkit\Backup-Watchdog.ps1" `
+  -TaskName "Lavoro Backup Sync" `
+  -RepeatMinutes 20 `
+  -RunAs SYSTEM `
+  -RunNow -Verbose
+ ```
+
 ## Log e Troubleshooting
 - I log (se abilitati) sono salvati in `/logs` o nel percorso configurato.
 - Verifica gli eventi del *Task Scheduler* in caso di errori (codici `0x1`, ecc.).
