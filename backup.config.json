@@ -1,0 +1,72 @@
+{
+	"Destinations": [
+		"D:\\Backups"
+	],
+	"LogRoot": "C:\\Logs\\Backup",
+	"DefaultOptions": {
+		"RobocopyArgs": [
+			"/MIR",
+			"/COPY:DAT",
+			"/DCOPY:DAT",
+			"/Z",
+			"/FFT",
+			"/R:2",
+			"/W:5",
+			"/MT:16",
+			"/XJ",
+			"/NFL",
+			"/NDL",
+			"/NP"
+		],
+		"ExcludeDirs": [
+			"bin",
+			"obj",
+			"node_modules",
+			".git",
+			".vs"
+		],
+		"ExcludeFiles": [
+			"*.tmp",
+			"*.log",
+			"Thumbs.db",
+			"desktop.ini"
+		]
+	},
+	"Daily": {
+		"Operations": [
+			{
+				"Name": "Progetti-Full",
+				"Destinations": [
+					"D:\\Backups"
+				],
+				"Mode": "EveryRun",
+				"IntervalMinutes": 0,
+				"WeekdayOnly": true,
+				"Sources": [
+					{
+						"Path": "D:\\Progetti\\Archive",
+						"TargetName": "Archive"
+					},
+					{
+						"Path": "D:\\Progetti\\Sandbox",
+						"TargetName": "Sandbox"
+					},
+					{
+						"Path": "D:\\Databases",
+						"TargetName": "Databases"
+					}
+				]
+			}
+		]
+	},
+	"Monthly": {
+		"Sources": [
+			{
+				"Path": "D:\\Progetti",
+				"TargetName": "Progetti"
+			}
+		],
+		"Days": [1, 15],
+		"Mode": "FirstOfMonthOnce"
+	}
+}
